@@ -2,6 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import * as YAML from 'yaml';
 import { csvUnparse } from './helpers/csvUnParse.js';
+import {
+  filenameFaxNumbers,
+  folderDataExtracted,
+} from './constants/constants.js';
 
 interface Office {
   classification?: string;
@@ -26,8 +30,8 @@ interface FaxRecord {
  */
 export function US_extractFaxNumbers(): void {
   const legislatureDir = path.join(process.cwd(), 'data', 'us', 'legislature');
-  const outputDir = path.join(process.cwd(), 'dataExtracted');
-  const outputFile = path.join(outputDir, 'US_fax_numbers.csv');
+  const outputDir = path.join(process.cwd(), folderDataExtracted);
+  const outputFile = path.join(outputDir, filenameFaxNumbers);
 
   // Ensure output directory exists
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });

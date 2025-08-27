@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "check": "tsc",
-    "fax": "tsx src/US_extractFaxNumbers.ts",
-    "email": "npx tsx src/US_extractEmailContactFormUrls.ts"
+    "start": "pnpm run extractFaxNumbers && pnpm run generateCSVwithTitles",
+    "extractFaxNumbers": "tsx src/US_extractFaxNumbers.ts",
+    "extractEmailContactFormUrls": "npx tsx src/US_extractEmailContactFormUrls.ts",
+    "generateCSVwithTitles": "npx tsx src/US_generateCSVwithTitles.ts"
   },
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
