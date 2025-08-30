@@ -2,6 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import * as YAML from 'yaml';
 import { csvUnparse } from './helpers/csvUnParse.js';
+import {
+  filenameEmailUrls,
+  folderDataExtracted,
+} from './constants/constants.js';
 
 interface Office {
   classification?: string;
@@ -27,8 +31,8 @@ interface EmailRecord {
  */
 export function US_extractEmailContactFormUrls(): void {
   const legislatureDir = path.join(process.cwd(), 'data', 'us', 'legislature');
-  const outputDir = path.join(process.cwd(), 'dataExtracted');
-  const outputFile = path.join(outputDir, 'US_email_contact_form_urls.csv');
+  const outputDir = path.join(process.cwd(), folderDataExtracted);
+  const outputFile = path.join(outputDir, filenameEmailUrls);
 
   // Ensure output directory exists
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
