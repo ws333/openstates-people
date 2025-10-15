@@ -9,7 +9,7 @@
     "rebaseUpstream": "sh ./scripts/rebaseUpstream.sh",
     "extractFaxNumbers": "tsx src/US_extractFaxNumbers.ts",
     "extractEmailContactFormUrls": "npx tsx src/US_extractEmailContactFormUrls.ts",
-    "generateCSVwithTitles": "npx tsx src/US_generateCSVwithTitles.ts"
+    "generateCSVwithTitles": "npx tsx src/US_generateCSVwithTitles.ts && sh ./scripts/copyOutputToCollector.sh"
   },
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
