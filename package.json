@@ -6,6 +6,7 @@
   "scripts": {
     "check": "tsc",
     "start": "pnpm run extractFaxNumbers && pnpm run generateCSVwithTitles",
+    "rebaseUpstream": "sh ./scripts/rebaseUpstream.sh",
     "extractFaxNumbers": "tsx src/US_extractFaxNumbers.ts",
     "extractEmailContactFormUrls": "npx tsx src/US_extractEmailContactFormUrls.ts",
     "generateCSVwithTitles": "npx tsx src/US_generateCSVwithTitles.ts"
